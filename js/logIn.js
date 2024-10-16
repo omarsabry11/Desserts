@@ -17,7 +17,9 @@ logInBtn.addEventListener('click', function(e) {
         if (emailInput.value === usersContainer[i].email && passwordInput.value === usersContainer[i].password) {
             isValidUser = true;
             localStorage.setItem('userName',JSON.stringify(usersContainer[i].name))
-            window.location.href = "../desserts.html"
+            const isGitHubPages = window.location.hostname === "omarsabry11.github.io";
+            const path = isGitHubPages ? "/Desserts/desserts.html" : "../desserts.html";
+            window.location.href = path;
             break;
         }
     }
